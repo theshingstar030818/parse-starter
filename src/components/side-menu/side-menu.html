@@ -1,29 +1,16 @@
-
-
-<div [ngSwitch]="auth?.currentUser?.get('role')">
-    
-  <ion-list  *ngSwitchCase='"admin"'>
-    <button menuClose ion-item *ngFor="let p of adminPages" (click)="openPage(p)">
+  
+  <ion-list  *ngIf="auth?.currentUser; else loggedOut">
+    <button menuClose ion-item *ngFor="let p of loggedInPages" (click)="openPage(p)">
       {{p.title}}
     </button>
   </ion-list>
 
-  <ion-list  *ngSwitchCase='"driver"'>
-    <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-      {{p.title}}
-    </button>
-  </ion-list>
+  <ng-template #loggedOut>
+    <ion-list >
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ng-template>
 
-  <ion-list  *ngSwitchCase='"pharmacy"'>
-    <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-      {{p.title}}
-    </button>
-  </ion-list>
-
-  <ion-list  *ngSwitchDefault>
-    <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-      {{p.title}}
-    </button>
-  </ion-list>
-
-</div>
+  

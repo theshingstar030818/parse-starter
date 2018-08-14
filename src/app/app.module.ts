@@ -7,7 +7,6 @@ import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ParseProvider } from '../providers/parse/parse';
-import { PharmacyProvider } from '../providers/pharmacy/pharmacy';
 import { AuthProvider } from '../providers/auth/auth';
 import { SideMenuComponent } from '../components/side-menu/side-menu';
 
@@ -30,7 +29,6 @@ import { SideMenuComponent } from '../components/side-menu/side-menu';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ParseProvider,
-    PharmacyProvider,
     AuthProvider
   ]
 })

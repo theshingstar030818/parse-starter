@@ -1,5 +1,5 @@
 export const ENV = {
     production: false,
-    parseAppId: '1234',
-    parseServerUrl: 'https://pacecouriers.com/app2'
+    parseAppId: 'bitmex1234',
+    parseServerUrl: 'https://pacecouriers.com/bitmex'
 }

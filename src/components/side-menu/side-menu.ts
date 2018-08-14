@@ -24,22 +24,18 @@ export class SideMenuComponent {
 
   @Input() nav: Nav;
 
-  pages: Array<SideMenuPage>;
-
-  adminPages: Array<SideMenuPage> = [
+  pages: Array<SideMenuPage> = [
     { title: 'Home', component: 'HomePage' },
-    { title: 'Pharmacies', component: 'PharmacyPage'}
+  ];
+
+  loggedInPages: Array<SideMenuPage> = [
+    { title: 'Home', component: 'HomePage' },
+    { title: 'List', component: 'ListPage' }
   ];
 
   constructor(
     public auth: AuthProvider,
-  ) {
-    console.log('Hello SideMenuComponent Component');
-    this.pages = [
-      { title: 'Home', component: 'HomePage' },
-      { title: 'List', component: 'ListPage' }
-    ];
-  }
+  ) { }
 
   openPage(page) {
     // Reset the content nav to have just this page
